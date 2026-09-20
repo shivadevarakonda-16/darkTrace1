@@ -1,0 +1,345 @@
+:root {
+  --soc-bg: #f4f6f9;
+  --soc-bg-deep: #eef1f5;
+  --soc-surface: #ffffff;
+  --soc-surface-hover: #f8fafc;
+  --soc-surface-active: #eef2ff;
+  --soc-border: #e2e6ec;
+  --soc-border-accent: #4f6df5;
+
+  --soc-accent-blue: #2563eb;
+  --soc-accent-green: #16a34a;
+  --soc-accent-amber: #d97706;
+  --soc-accent-red: #dc2626;
+  --soc-accent-purple: #7c3aed;
+
+  --soc-text-primary: #1a2233;
+  --soc-text-secondary: #64748b;
+  --soc-text-muted: #94a3b8;
+  --soc-mono-font: 'JetBrains Mono', 'Roboto Mono', 'Courier New', monospace;
+
+  --soc-info-text: #0369a1;
+  --soc-info-border: #7dd3fc;
+  --soc-warning-text: #b45309;
+  --soc-track-bg: #e2e8f0;
+  --soc-code-bg: #f1f5f9;
+  --soc-header-bg: #ffffff;
+  --soc-scroll-thumb: #cbd5e1;
+  --soc-scroll-thumb-hover: #94a3b8;
+  --soc-table-head-bg: #f8fafc;
+
+  --badge-critical-bg: #fee2e2; --badge-critical-text: #b91c1c; --badge-critical-border: #fecaca;
+  --badge-high-bg: #ffedd5; --badge-high-text: #c2410c; --badge-high-border: #fed7aa;
+  --badge-medium-bg: #dbeafe; --badge-medium-text: #1d4ed8; --badge-medium-border: #bfdbfe;
+  --badge-low-bg: #f1f5f9; --badge-low-text: #475569; --badge-low-border: #e2e8f0;
+  --badge-success-bg: #dcfce7; --badge-success-text: #15803d; --badge-success-border: #bbf7d0;
+}
+
+[data-theme="dark"] {
+  --soc-bg: #0a0e14;
+  --soc-bg-deep: #05070a;
+  --soc-surface: #12161d;
+  --soc-surface-hover: #1a1f28;
+  --soc-surface-active: #1e2a44;
+  --soc-border: #262c37;
+  --soc-border-accent: #3b82f6;
+
+  --soc-accent-blue: #4f9dff;
+  --soc-accent-green: #22c55e;
+  --soc-accent-amber: #f59e0b;
+  --soc-accent-red: #f87171;
+  --soc-accent-purple: #a78bfa;
+
+  --soc-text-primary: #e6eaf0;
+  --soc-text-secondary: #97a3b6;
+  --soc-text-muted: #626d7d;
+
+  --soc-info-text: #38bdf8;
+  --soc-info-border: #0369a1;
+  --soc-warning-text: #fbbf24;
+  --soc-track-bg: #262c37;
+  --soc-code-bg: #05070a;
+  --soc-header-bg: #12161d;
+  --soc-scroll-thumb: #333a47;
+  --soc-scroll-thumb-hover: #4f9dff;
+  --soc-table-head-bg: #0e1218;
+
+  --badge-critical-bg: rgba(248, 113, 113, 0.15); --badge-critical-text: #f87171; --badge-critical-border: rgba(248, 113, 113, 0.35);
+  --badge-high-bg: rgba(245, 158, 11, 0.15); --badge-high-text: #f59e0b; --badge-high-border: rgba(245, 158, 11, 0.35);
+  --badge-medium-bg: rgba(79, 157, 255, 0.15); --badge-medium-text: #4f9dff; --badge-medium-border: rgba(79, 157, 255, 0.35);
+  --badge-low-bg: rgba(151, 163, 182, 0.15); --badge-low-text: #97a3b6; --badge-low-border: rgba(151, 163, 182, 0.3);
+  --badge-success-bg: rgba(34, 197, 94, 0.15); --badge-success-text: #22c55e; --badge-success-border: rgba(34, 197, 94, 0.35);
+}
+
+html {
+  background-color: var(--soc-bg);
+}
+
+body {
+  background-color: var(--soc-bg) !important;
+  color: var(--soc-text-primary) !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  line-height: 1.6;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+main {
+  padding-top: 1.75rem !important;
+  padding-bottom: 3rem !important;
+}
+
+/* Force ALL Bootstrap surfaces to the theme palette by default */
+.card, .modal-content, .dropdown-menu, .list-group-item, .offcanvas,
+.accordion-item, .popover, .toast {
+  background-color: var(--soc-surface) !important;
+  color: var(--soc-text-primary) !important;
+  border-color: var(--soc-border) !important;
+}
+
+.form-control, .form-select {
+  background-color: var(--soc-surface) !important;
+  color: var(--soc-text-primary) !important;
+  border-color: var(--soc-border) !important;
+}
+.form-control:focus, .form-select:focus {
+  background-color: var(--soc-surface) !important;
+  color: var(--soc-text-primary) !important;
+  border-color: var(--soc-accent-blue) !important;
+  box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.15) !important;
+}
+.form-control::placeholder {
+  color: var(--soc-text-muted) !important;
+}
+
+.font-mono, .text-mono {
+  font-family: var(--soc-mono-font) !important;
+}
+
+/* Cards / panels */
+.soc-card {
+  background: var(--soc-surface);
+  border: 1px solid var(--soc-border);
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.soc-card:hover {
+  border-color: var(--soc-border-accent);
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.08);
+}
+
+.soc-card-active {
+  border-color: var(--soc-accent-blue) !important;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15) !important;
+}
+
+/* Header & Sidebar */
+.soc-header {
+  background: var(--soc-header-bg);
+  border-bottom: 1px solid var(--soc-border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.soc-sidebar {
+  background: var(--soc-header-bg);
+  border-right: 1px solid var(--soc-border);
+  min-height: calc(100vh - 64px);
+}
+
+/* Badges */
+.badge-cyber {
+  font-family: var(--soc-mono-font);
+  font-size: 0.75rem;
+  letter-spacing: 0.3px;
+  padding: 0.35rem 0.65rem;
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+
+.badge-cyber-critical {
+  background: var(--badge-critical-bg);
+  color: var(--badge-critical-text);
+  border-color: var(--badge-critical-border);
+}
+
+.badge-cyber-high {
+  background: var(--badge-high-bg);
+  color: var(--badge-high-text);
+  border-color: var(--badge-high-border);
+}
+
+.badge-cyber-medium {
+  background: var(--badge-medium-bg);
+  color: var(--badge-medium-text);
+  border-color: var(--badge-medium-border);
+}
+
+.badge-cyber-low {
+  background: var(--badge-low-bg);
+  color: var(--badge-low-text);
+  border-color: var(--badge-low-border);
+}
+
+.badge-cyber-success {
+  background: var(--badge-success-bg);
+  color: var(--badge-success-text);
+  border-color: var(--badge-success-border);
+}
+
+.pulse-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--soc-accent-green);
+  display: inline-block;
+  box-shadow: 0 0 0 rgba(22, 163, 74, 0.5);
+  animation: radar-pulse 2s infinite;
+}
+
+@keyframes radar-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.5); }
+  70% { box-shadow: 0 0 0 8px rgba(22, 163, 74, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0); }
+}
+
+/* Nav */
+.soc-nav-link {
+  color: var(--soc-text-secondary);
+  border-radius: 6px;
+  padding: 0.65rem 1rem;
+  margin-bottom: 0.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-left: 3px solid transparent;
+  transition: all 0.15s ease;
+}
+
+.soc-nav-link:hover {
+  color: var(--soc-text-primary);
+  background: var(--soc-surface-hover);
+}
+
+.soc-nav-link.active {
+  color: var(--soc-accent-blue);
+  background: var(--soc-surface-active);
+  border-left: 3px solid var(--soc-accent-blue);
+  font-weight: 600;
+}
+
+/* Tables */
+.table-cyber {
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--soc-text-primary);
+  --bs-table-border-color: var(--soc-border);
+  margin-bottom: 0;
+}
+
+.table-cyber thead th {
+  background: var(--soc-table-head-bg);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--soc-text-secondary);
+  border-bottom: 1px solid var(--soc-border);
+  padding: 0.85rem 1rem;
+  font-weight: 600;
+}
+
+.table-cyber tbody td {
+  padding: 0.9rem 1rem;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--soc-border);
+}
+
+.table-cyber tbody tr:hover {
+  background: var(--soc-surface-hover) !important;
+}
+
+.soc-slider {
+  accent-color: var(--soc-accent-blue);
+  cursor: pointer;
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--soc-bg); }
+::-webkit-scrollbar-thumb { background: var(--soc-scroll-thumb); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--soc-scroll-thumb-hover); }
+
+.text-glow-green { color: var(--soc-accent-green); font-weight: 600; }
+.text-glow-blue { color: var(--soc-accent-blue); font-weight: 600; }
+.text-glow-red { color: var(--soc-accent-red); font-weight: 600; }
+
+/* Override Bootstrap's default text-info (light cyan) and text-warning (yellow) —
+   both have poor contrast on a white background. Theme-aware via variables so
+   both light and dark mode stay readable. */
+.text-info {
+  color: var(--soc-info-text) !important;
+}
+.text-warning {
+  color: var(--soc-warning-text) !important;
+}
+/* Bootstrap's .text-dark is a fixed near-black — that's correct in light mode,
+   but invisible on a dark background. Make it follow the theme's primary text
+   color instead so all 75+ places using it stay readable in both modes. */
+.text-dark {
+  color: var(--soc-text-primary) !important;
+}
+.text-secondary {
+  color: var(--soc-text-secondary) !important;
+}
+.text-muted {
+  color: var(--soc-text-muted) !important;
+}
+/* Small badges/panels use bg-white as a light-mode "chip" surface — make them
+   follow the theme surface color too, so they don't look like stray white
+   boxes when dark mode is on. */
+.bg-white {
+  background-color: var(--soc-surface) !important;
+}
+.bg-light {
+  background-color: var(--soc-bg) !important;
+}
+.border-info {
+  border-color: var(--soc-info-border) !important;
+}
+.btn-outline-info {
+  color: var(--soc-info-text) !important;
+  border-color: var(--soc-info-text) !important;
+}
+.btn-outline-info:hover {
+  background-color: var(--soc-info-text) !important;
+  color: #ffffff !important;
+}
+.spinner-border.text-info {
+  color: var(--soc-info-text) !important;
+}
+
+/* Theme toggle switch in the navbar */
+.theme-toggle-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--soc-border);
+  background: var(--soc-surface);
+  color: var(--soc-text-secondary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.theme-toggle-btn:hover {
+  border-color: var(--soc-accent-blue);
+  color: var(--soc-accent-blue);
+}
+
+@media print {
+  .no-print { display: none !important; }
+  .soc-card { border: 1px solid #000000 !important; }
+}

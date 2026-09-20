@@ -1,0 +1,64 @@
+/* ==========================================================================
+   Lightweight icon shim — replaces the bootstrap-icons font entirely.
+   Every `<i className="bi bi-xxx">` in the app is left as-is in the JSX;
+   this file just renders a simple glyph via ::before so no icon font or
+   external icon library is needed.
+   ========================================================================== */
+
+.bi {
+  display: inline-block;
+  font-style: normal;
+  line-height: 1;
+  vertical-align: -0.125em;
+}
+
+.bi-arrow-clockwise::before { content: '\21bb'; }
+.bi-arrow-left::before { content: '\2190'; }
+.bi-arrow-left-right::before { content: '\2194'; }
+.bi-arrow-return-right::before { content: '\21b3'; }
+.bi-arrows-fullscreen::before { content: '\26f6'; }
+.bi-calculator::before { content: '\1f5a9'; }
+.bi-chat-left-dots-fill::before { content: '\1f4ac'; }
+.bi-chat-square-dots-fill::before { content: '\1f4ac'; }
+.bi-check-circle-fill::before { content: '\2713'; }
+.bi-chevron-down::before { content: '\2304'; }
+.bi-chevron-up::before { content: '\2303'; }
+.bi-chevron-left::before { content: '\2039'; }
+.bi-chevron-right::before { content: '\203a'; }
+.bi-clock::before { content: '\1f550'; }
+.bi-clock-history::before { content: '\23f3'; }
+.bi-cpu::before { content: '\2699'; }
+.bi-currency-bitcoin::before { content: '\20bf'; }
+.bi-database::before { content: '\1f5c4'; }
+.bi-diagram-3-fill::before { content: '\1f517'; }
+.bi-exclamation-octagon-fill::before { content: '\26d4'; }
+.bi-exclamation-triangle-fill::before { content: '\26a0'; }
+.bi-file-earmark-arrow-down-fill::before { content: '\2b07'; }
+.bi-file-earmark-pdf::before { content: '\1f4c4'; }
+.bi-filetype-csv::before { content: '\1f4c4'; }
+.bi-filetype-json::before { content: '\1f4c4'; }
+.bi-fingerprint::before { content: '\1f440'; }
+.bi-globe::before { content: '\1f310'; }
+.bi-grid-1x2-fill::before { content: '\25a6'; }
+.bi-hdd-network::before { content: '\1f5a5'; }
+.bi-hdd-network-fill::before { content: '\1f5a5'; }
+.bi-info-circle-fill::before { content: '\2139'; }
+.bi-key-fill::before { content: '\1f511'; }
+.bi-link-45deg::before { content: '\1f517'; }
+.bi-list::before { content: '\2630'; }
+.bi-moon-stars-fill::before { content: '\1f319'; }
+.bi-person-badge-fill::before { content: '\1f464'; }
+.bi-person-bounding-box::before { content: '\1f9cd'; }
+.bi-person-check-fill::before { content: '\2714'; }
+.bi-printer-fill::before { content: '\1f5a8'; }
+.bi-radar::before { content: '\1f4e1'; }
+.bi-search::before { content: '\1f50d'; }
+.bi-shield-check::before { content: '\1f6e1'; }
+.bi-shield-lock-fill::before { content: '\1f512'; }
+.bi-shield-shaded::before { content: '\1f6e1'; }
+.bi-sliders::before { content: '\2261'; }
+.bi-sun-fill::before { content: '\2600'; }
+.bi-terminal-fill::before { content: '\2328'; }
+.bi-x::before { content: '\00d7'; }
+.bi-zoom-in::before { content: '\1f50d'; }
+.bi-zoom-out::before { content: '\1f50e'; }
