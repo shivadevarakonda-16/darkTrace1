@@ -37,7 +37,7 @@ export default function LoginPage() {
         <div className="login-brand">
           <Shield size={28} strokeWidth={2} />
           <div>
-            <div className="login-brand-title">AegisTrace</div>
+            <div className="login-brand-title">DarkTrace</div>
             <div className="login-brand-subtitle">Threat Actor Attribution Platform</div>
           </div>
         </div>
